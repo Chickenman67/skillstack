@@ -11,6 +11,6 @@ logs/
 # OS files
 .DS_Store
 Thumbs.db
-git
+
 # VS Code settings (optional)
 .vscode/
