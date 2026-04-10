@@ -1,0 +1,11 @@
+#add-section {
+  display: none;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #005f9a;
+  color: rgb(55, 255, 0);
+}

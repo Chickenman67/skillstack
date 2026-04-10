@@ -1,9 +1,52 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>SkillStack</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <nav class="navbar">
+        <h1 class="logo">SkillStack</h1>
+        <div>
+        <button id="dashboard-btn">Dashboard</button>
+        <button id="add-btn">Add Skill</button>
+        </div>
+    </nav>
+    <main>
+    <section id="dashboard-section">
+            <h2>Your Skills</h2>
+
+            <div id = "skills-container">
+
+            </div>
+    </section>
+    <section id="add-section" class = "section">
+            <h2>Add Skill</h2>
+                <form id="skill-form">
+                    
+                    <label for="skill-name">Skill Name:</label><br>
+                    <input type = "text" id = "skill-name" placeholder = "Skill Name" required>
+                    <br>
+
+                    <label for="skill-progress">Progress (0-100):</label><br>
+                    <input type="number" id = "skill-progress" placeholder = "Progress (0-100)" min="0" max="100" required>
+                    <br>
+
+                    <label for="skill-notes">Notes:</label><br>
+                    <textarea id="skill-notes" placeholder="Notes"></textarea>
+                    <br>
+
+                    <button type="submit">Add Skill</button>
+                
+                </form>    
+    </section>
+    </main>
+
+
+
+
+
 
 </body>
 
