@@ -1,54 +1,82 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SkillStack</title>
-    <link rel="stylesheet" href="styles/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillStack - Personal Skill Tracker</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        <h1 class="logo">SkillStack</h1>
-        <div>
-        <button id="dashboard-btn">Dashboard</button>
-        <button id="add-btn">Add Skill</button>
+        <div class="nav-container">
+            <h1 class="logo">SkillStack</h1>
+            <div class="nav-buttons">
+                <button class="nav-btn" id="dashboard-btn">Dashboard</button>
+                <button class="nav-btn primary" id="add-btn">Add Skill</button>
+            </div>
         </div>
     </nav>
-    <main>
-    <section id="dashboard-section">
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Form Section -->
+        <section class="form-section" id="add-section">
+            <h2>Add a New Skill</h2>
+            <form id="skill-form">
+                <div class="form-group">
+                    <label for="skill-name">Skill Name</label>
+                    <input 
+                        type="text" 
+                        id="skill-name" 
+                        placeholder="e.g., JavaScript, React, Design..." 
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="skill-progress">Progress (%)</label>
+                    <input 
+                        type="number" 
+                        id="skill-progress" 
+                        placeholder="0-100" 
+                        min="0" 
+                        max="100" 
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="skill-notes">Notes</label>
+                    <textarea 
+                        id="skill-notes" 
+                        placeholder="Add any notes about this skill..."
+                        rows="4"
+                    ></textarea>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn primary">Add Skill</button>
+                    <button type="button" class="btn secondary" id="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Skills Display Section -->
+        <section class="skills-section" id="dashboard-section">
             <h2>Your Skills</h2>
-
-            <div id = "skills-container">
-                
-            
+            <div id="skills-container" class="skills-container">
+                <!-- Skills cards will be dynamically inserted here -->
             </div>
-    </section>
-    <section id="add-section" class = "section">
-            <h2>Add Skill</h2>
-                <form id="skill-form">
-                    
-                    <label for="skill-name">Skill Name:</label><br>
-                    <input type = "text" id = "skill-name" placeholder = "Skill Name" required>
-                    <br>
-
-                    <label for="skill-progress">Progress (0-100):</label><br>
-                    <input type="number" id = "skill-progress" placeholder = "Progress (0-100)" min="0" max="100" required>
-                    <br>
-
-                    <label for="skill-notes">Notes:</label><br>
-                    <textarea id="skill-notes" placeholder="Notes"></textarea>
-                    <br>
-
-                    <button type="submit">Add Skill</button>
-                
-                </form>    
-    </section>
+            <div id="empty-state" class="empty-state">
+                <p>No skills yet. Click "Add Skill" to get started!</p>
+            </div>
+        </section>
     </main>
 
-
-
-
-
-
+    <!-- Scripts (order matters!) -->
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
-
 </html>
